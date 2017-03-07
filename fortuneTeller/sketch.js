@@ -7,9 +7,10 @@ var verbs = ["admire", "annoy", "avoid", "beg", "bend", "care", "confide", "dece
 var nounPPT = nouns[Math.floor(Math.random()*nouns.length)];  
 var adjD = adj[Math.floor(Math.random()*adj.length)];
 var advB = adj[Math.floor(Math.random()*adj.length)];  
-
+var page = 0;
 
 x = 450
+ 
 
 var table;
 function preload()  {
@@ -23,21 +24,38 @@ function setup() {
 
  
 function draw() {
-  
-  image(table, 0, 0, 900, 900);
+
+  if (page == 0) {
+  image(table, 0, 0, 900, 900); // table image
   fill(255, 255, 255);
   noStroke();
-  ellipse(450, 450, 150, 150);
+  ellipse(450, 450, 150, 150); //crystal ball
+  
+  noStroke();
+  fill(93, 0, 255);
+  textAlign(CENTER);
+  textSize(40);
+  text("Start", x, x + 15);
+  
+  } else if (page == 1) {
+    rect(x, 20, 50, 10)
+  }
+
+function mousePressed() {
+    if(page == 0 && mouseX > 375 && mouseX < 525 && mouseY > 375 && mouseY < 525);
+    page = page + 1;
+  }
 
   textSize(60);
   fill(255);
   textAlign(CENTER);
+  // loadFont(<link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">);
   text("Welcome to FortuneTellery!", 450, 150);
   
-  // noStroke();
-  // fill(120);
-  // textAlign(CENTER);
-  // textSize(40);
+
+  
+
+  
   // text(nounPPT, x, 460);
   // //text(adjD, x + 50, 300)
   
