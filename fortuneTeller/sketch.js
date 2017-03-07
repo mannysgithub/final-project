@@ -5,7 +5,9 @@ var adv = ["carefully", "adoringly", "competitively", "eagerly", "really", "quie
 var verbs = ["admire", "annoy", "avoid", "beg", "bend", "care", "confide", "deceive", "dare", "envy", "exaggerate", "fear", "fix", "feel", "guess", "hand", "help", "hurry", "inspire", "interfere", "listen", "learn", "mail", "meet", "melt", "play", "promise", "pretend", "race", "recognize", "risk", "rush", "stop", "surprise", "tell", "twist", "understand", "utter", "warn", "whisper", "worry", "yell"]
 
 var nounPPT = nouns[Math.floor(Math.random()*nouns.length)];  
-//var adjD = adj[Math.floor(Math.random()*adj.length)];  
+var adjD = adj[Math.floor(Math.random()*adj.length)];
+var advB = adj[Math.floor(Math.random()*adj.length)];  
+
 
 x = 450
 
@@ -21,20 +23,26 @@ function setup() {
 
  
 function draw() {
+  
   image(table, 0, 0, 900, 900);
   fill(255, 255, 255);
   noStroke();
   ellipse(450, 450, 150, 150);
-  
-  noStroke();
-  fill(120);
+
+  textSize(60);
+  fill(255);
   textAlign(CENTER);
-  textSize(40);
-  text(nounPPT, x, 460);
-  //text(adjD, x + 50, 300)
+  text("Welcome to FortuneTellery!", 450, 150);
   
-   fill(255, 255, 255);
-  textSize(50);
-  text("A" + " " nouns[0] + " " verbs[0] + " " adj[0], 300, 200);
+  // noStroke();
+  // fill(120);
+  // textAlign(CENTER);
+  // textSize(40);
+  // text(nounPPT, x, 460);
+  // //text(adjD, x + 50, 300)
+  
+  // fill(255, 255, 255);
+  // textSize(50);
+  // text("A" + " " + nounPPT + " " + verbs[0] + " " + adjD, 300, 200);
 }
   
