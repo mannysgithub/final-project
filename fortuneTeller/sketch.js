@@ -10,8 +10,10 @@ var advB = adj[Math.floor(Math.random()*adj.length)];
 var page = 0;
 
 //  Center of the canvas + Crystal ball
-x = 450 
-
+x = 450; 
+y = 450;
+w = 80;
+y = 80;
 // Make title scroll off the screen
 var titleX = 450
 
@@ -58,8 +60,11 @@ function draw() {
   textAlign(CENTER);
   text("Welcome to FortuneTellery!", titleX, 150); // Make the text scroll off the screen
     titleX = titleX - 2;  
-  
+
+  cards();
+}
 // draw and control player card placement
+function cards()  {
   strokeWeight(4);
   stroke(0);
   fill(165, 33, 33);
@@ -75,12 +80,19 @@ function draw() {
     
   rect(card4X, 450, 300, 350, 25, 25, 25, 25); // Bring in left card
     card4X = min(card4X + 2, 150);
-  
+}
   // rect(450, 150, 350, 300, 25, 25, 25, 25);
   // rect(750, 450, 300, 350, 25, 25, 25, 25);
   // rect(150, 450, 300, 350, 25, 25, 25, 25);
   // rect(450, 750, 350, 300, 25, 25, 25, 25);
-}
+function mousePressed() {
+  ellipse(450, 450, 80, 80);
+    if (mouseX > 410 && mouseX <490 && mouseY > 410 && mouseY < 490) {
+    text("I'm player 1!", 450, 75);
+    }
+  }
+
+
   
 
 //   if(page == 0) {
