@@ -73,8 +73,8 @@ function draw() {
   textAlign(CENTER);
   textFont("Griffy");
   textSize(50);
-  text("Start", x, startY);
-    startY = min(startY + 2, 460);
+  // text("Start", x, startY);
+  //   startY = min(startY + 2, 460);
   
 // Show title and scroll off the screen
   frameRate(90);
@@ -104,23 +104,40 @@ function cards()  {
     card3Y = max(card3Y - 2, 750);
   rect(card4X, 450, 300, 350, 25, 25, 25, 25); // Bring in left card
     card4X = min(card4X + 2, 150);
-    
-  } else {
-  allCards();
   
   noStroke();
-  fill(0, 255, 0);
-  textSize(25); 
-  textFont("Ranga");
-  textAlign(CENTER);
-    if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-    text("I'm player 1!", player1X, player1Y);
+  text("Start", x, startY);
+    startY = min(startY + 2, 460);
+  
+  // for (i = 0; i < allCards.length; i++) {
+  //   allCards();
+  // }  
+  } else if (page ==1) {
+    allCards();
+  
+    noStroke();
+    fill(0, 255, 0);
+    textSize(25); 
+    textFont("Ranga");
+    textAlign(CENTER);
+      if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
+      text("I'm player 1!", player1X, player1Y);
+    }
+   
+  } else if (page ==2) {
+    allCards();
+    noStroke();
+    fill(0, 255, 0);
+    textSize(25); 
+    textFont("Ranga");
+    textAlign(CENTER);
+      if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
+        text("I'm player 2!", player2X, player2Y);
+    }
   }
- }  
 }
-
 function mousePressed() {
-  page = 1 - page;
+  page = page + 1;
 }
 
 function allCards() {
