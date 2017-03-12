@@ -14,6 +14,8 @@ var nounPPT = nouns[Math.floor(Math.random()*nouns.length)];
 var adjD = adj[Math.floor(Math.random()*adj.length)];
 var advB = adj[Math.floor(Math.random()*adj.length)];  
 
+//var allCards = allCards
+
 
 //  Center of the canvas + Crystal ball
 x = 450; 
@@ -104,14 +106,7 @@ function cards()  {
     card4X = min(card4X + 2, 150);
     
   } else {
-  strokeWeight(4);
-  stroke(0);
-  fill(165, 33, 33);
-  rectMode(CENTER);
-  rect(450, card1Y, 350, 300, 25, 25, 25, 25); // Bring in top card
-  rect(card2X, 450, 300, 350, 25, 25, 25, 25); // Bring in right card
-  rect(450, card3Y, 350, 300, 25, 25, 25, 25); // Bring in bottom card
-  rect(card4X, 450, 300, 350, 25, 25, 25, 25); // Bring in left card
+  allCards();
   
   noStroke();
   fill(0, 255, 0);
@@ -126,6 +121,17 @@ function cards()  {
 
 function mousePressed() {
   page = 1 - page;
+}
+
+function allCards() {
+  strokeWeight(4);
+  stroke(0);
+  fill(165, 33, 33);
+  rectMode(CENTER);
+  rect(450, card1Y, 350, 300, 25, 25, 25, 25); // Bring in top card
+  rect(card2X, 450, 300, 350, 25, 25, 25, 25); // Bring in right card
+  rect(450, card3Y, 350, 300, 25, 25, 25, 25); // Bring in bottom card
+  rect(card4X, 450, 300, 350, 25, 25, 25, 25); // Bring in left card
 }
 
   // rect(450, 150, 350, 300, 25, 25, 25, 25);
