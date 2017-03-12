@@ -15,10 +15,15 @@ var nouns = ["truck","pie","car","baseball","potato","banana","train","trash","l
 var adj = ["steep","woebegone","quaint","separate","longing","rich","majestic","dead","miscreant","free","freezing","psychedelic","light","macho","magical","brown","valuable","ordinary","homely","incredible","poor","curly","unusual","third"]
 var adv = ["carefully", "adoringly", "competitively", "eagerly", "really", "quietly", "loyally", " quickly", "ruthlessly", "brutally", "cheerfully", "before", "never", "soon", "somewhere", "there", "upstairs", "extremely", "quite",  "very", "away"]
 var verbs = ["admire", "annoy", "avoid", "beg", "bend", "care", "confide", "deceive", "dare", "envy", "exaggerate", "fear", "fix", "feel", "guess", "hand", "help", "hurry", "inspire", "interfere", "listen", "learn", "mail", "meet", "melt", "play", "promise", "pretend", "race", "recognize", "risk", "rush", "stop", "surprise", "tell", "twist", "understand", "utter", "warn", "whisper", "worry", "yell"]
+var nount = ["chair","camera","sister","brother","mother","father","dog","snow","phone","toe","butt","box","book","montana","Seattle","kayak","park","capitol","president","desk","Hollywood","mountain","bicycle","television","soccer","cake"]
+
 
 var nounPPT = nouns[Math.floor(Math.random()*nouns.length)];  
 var adjD = adj[Math.floor(Math.random()*adj.length)];
-var advB = adj[Math.floor(Math.random()*adj.length)];  
+var advB = adj[Math.floor(Math.random()*adj.length)];
+var nounPPU = nount[Math.floor(Math.random()*nount.length)];
+var verbT = adj[Math.floor(Math.random()*adj.length)]; 
+
 
 //var allCards = allCards
 
@@ -120,52 +125,50 @@ function cards()  {
   // }  
   } else if (page ==1) {
     allCards();
-  
-    noStroke();
-    fill(0, 255, 0);
-    textSize(25); 
-    textFont("Ranga");
-    textAlign(CENTER);
+    playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-      text(playerA, player1X, player1Y);
+        text(playerA, player1X, player1Y);
     }
    
   } else if (page ==2) {
     allCards();
-    noStroke();
-    fill(0, 255, 0);
-    textSize(25); 
-    textFont("Ranga");
-    textAlign(CENTER);
+    playerFont(0);
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
         text(playerB, player2X, player2Y);
     }
     
   } else if (page ==3) {
     allCards();
-    noStroke();
-    fill(0,255,0);
-    textSize(25);
-    textFont("Ranga");
-    textAlign(CENTER);
+    playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
         text(playerC, player3X, player3Y);
     }
 
   } else if (page ==4) {
     allCards();
-    noStroke();
-    fill(0,255,0);
-    textSize(25);
-    textFont("Ranga");
-    textAlign(CENTER);
+    playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
           text(playerD, player4X, player4Y);
     }  
   }
 }
 function mousePressed() {
-  page = page + 1;
+  count = count + 1
+  page = (page + 1)%5;
+  if (count > 4) {
+    playerA = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
+    playerB = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
+    playerC = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
+    playerD = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
+  }
+}
+
+function playerFont() {
+  noStroke();
+  fill(0, 255, 0);
+  textSize(25); 
+  textFont("Ranga");
+  textAlign(CENTER);
 }
 
 function allCards() {
