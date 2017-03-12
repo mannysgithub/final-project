@@ -2,6 +2,12 @@
 // Last edited 3/9/2017
 // Fortune Telling Game for 4 players
 var players = ["Player 1", "Player 2", "Player 3", "Player 4"];
+count = 0
+
+var playerA = "I'm player 1!"
+var playerB = "I'm player 2!"
+var playerC = "I'm player 3!"
+var playerD = "I'm player 4!"
 
 var page = 0;
 
@@ -27,7 +33,7 @@ y = 80;
 var titleX = 450;
 
 // "Start" waiting off screen
-var startY = -450
+var startY = -550
 
 // Player cards waiting off screen
 var card1Y = -600
@@ -121,7 +127,7 @@ function cards()  {
     textFont("Ranga");
     textAlign(CENTER);
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-      text("I'm player 1!", player1X, player1Y);
+      text(playerA, player1X, player1Y);
     }
    
   } else if (page ==2) {
@@ -132,8 +138,30 @@ function cards()  {
     textFont("Ranga");
     textAlign(CENTER);
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-        text("I'm player 2!", player2X, player2Y);
+        text(playerB, player2X, player2Y);
     }
+    
+  } else if (page ==3) {
+    allCards();
+    noStroke();
+    fill(0,255,0);
+    textSize(25);
+    textFont("Ranga");
+    textAlign(CENTER);
+      if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
+        text(playerC, player3X, player3Y);
+    }
+
+  } else if (page ==4) {
+    allCards();
+    noStroke();
+    fill(0,255,0);
+    textSize(25);
+    textFont("Ranga");
+    textAlign(CENTER);
+      if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
+          text(playerD, player4X, player4Y);
+    }  
   }
 }
 function mousePressed() {
