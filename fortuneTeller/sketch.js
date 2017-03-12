@@ -4,25 +4,28 @@
 var players = ["Player 1", "Player 2", "Player 3", "Player 4"];
 count = 0
 
-var playerA = "I'm player 1!"
-var playerB = "I'm player 2!"
-var playerC = "I'm player 3!"
-var playerD = "I'm player 4!"
+var playerA = "I'm player 1! Click to see the other players"
+var playerB = "I'm player 2! Click to see the other players"
+var playerC = "I'm player 3! CLick to see other players"
+var playerD = "I'm player 4! Click to see other players"
 
 var page = 0;
 
-var nouns = ["truck","pie","car","baseball","potato","banana","train","trash","lamp","chair","camera","sister","brother","mother","father","dog","snow","phone","toe","butt","box","book","montana","Seattle","kayak","park","capitol","president","desk","Hollywood","mountain","bicycle","television","soccer","cake"]
+var nouns = ["truck","pie","car","baseball","potato","banana","train","trash","lamp","grape","totem pole","reddit","scale","frog","iPod","iPhone","Android","robot","weasel","zoo","Japan","architect","backpack","Nintendo","Xbox","bridge","brick","pizza","shoe","couch","river","unicycle","cupcake","desert","moped"]
 var adj = ["steep","woebegone","quaint","separate","longing","rich","majestic","dead","miscreant","free","freezing","psychedelic","light","macho","magical","brown","valuable","ordinary","homely","incredible","poor","curly","unusual","third"]
 var adv = ["carefully", "adoringly", "competitively", "eagerly", "really", "quietly", "loyally", " quickly", "ruthlessly", "brutally", "cheerfully", "before", "never", "soon", "somewhere", "there", "upstairs", "extremely", "quite",  "very", "away"]
 var verbs = ["admire", "annoy", "avoid", "beg", "bend", "care", "confide", "deceive", "dare", "envy", "exaggerate", "fear", "fix", "feel", "guess", "hand", "help", "hurry", "inspire", "interfere", "listen", "learn", "mail", "meet", "melt", "play", "promise", "pretend", "race", "recognize", "risk", "rush", "stop", "surprise", "tell", "twist", "understand", "utter", "warn", "whisper", "worry", "yell"]
-var nount = ["chair","camera","sister","brother","mother","father","dog","snow","phone","toe","butt","box","book","montana","Seattle","kayak","park","capitol","president","desk","Hollywood","mountain","bicycle","television","soccer","cake"]
-
+var nount = ["chair","camera","sister","brother","mother","father","dog","snow","toe","butt","box","book","montana","Seattle","kayak","park","capitol","president","desk","Hollywood","mountain","bicycle","television","soccer","cake"]
+var who = ["your best friend", "the person across from you", "on TV", "a stranger", "behind you"]
+var will = ["will", "might", "should", "could", "definitely", "can", "always", "ought not", "must"]
 
 var nounPPT = nouns[Math.floor(Math.random()*nouns.length)];  
 var adjD = adj[Math.floor(Math.random()*adj.length)];
 var advB = adj[Math.floor(Math.random()*adj.length)];
 var nounPPU = nount[Math.floor(Math.random()*nount.length)];
-var verbT = adj[Math.floor(Math.random()*adj.length)]; 
+var verbT = adj[Math.floor(Math.random()*adj.length)];
+var whoPPP = who[Math.floor(Math.random()*who.length)];
+var willRRR = nount[Math.floor(Math.random()*will.length)];
 
 
 //var allCards = allCards
@@ -79,16 +82,16 @@ function draw() {
   ellipse(450, 450, 150, 150); //crystal ball
   
 // Label "Start" the Crystal Ball
-  noStroke();
-  fill(165, 33, 33);
-  textAlign(CENTER);
-  textFont("Griffy");
-  textSize(50);
+  // noStroke();
+  // fill(165, 33, 33);
+  // textAlign(CENTER);
+  // textFont("Griffy");
+  // textSize(50);
   // text("Start", x, startY);
   //   startY = min(startY + 2, 460);
   
 // Show title and scroll off the screen
-  frameRate(90);
+  frameRate(150);
   fill(255); 
   textSize(70); 
   textFont("Griffy");
@@ -156,12 +159,26 @@ function mousePressed() {
   count = count + 1
   page = (page + 1)%5;
   if (count > 4) {
-    playerA = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
-    playerB = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
-    playerC = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
-    playerD = nounPPT + " " + "will" + " " + verbT + " " + "your" + " " + adjD + " " + nounPPU;
+    playerA = cardRandomText();
+    playerB = cardRandomText();
+    playerC = cardRandomText();
+    playerD = cardRandomText();
+    
   }
 }
+
+function cardRandomText () {
+    nounPPT = nouns[Math.floor(Math.random()*nouns.length)];  
+    adjD = adj[Math.floor(Math.random()*adj.length)];
+    advB = adj[Math.floor(Math.random()*adj.length)];
+    nounPPU = nount[Math.floor(Math.random()*nount.length)];
+    verbT = adj[Math.floor(Math.random()*adj.length)]
+    whoPPP = who[Math.floor(Math.random()*who.length)];
+    willRRR = nount[Math.floor(Math.random()*will.length)];
+  
+   return nounPPT + " " + willRRR + " " + verbT + " " + whoPPP + " " + adjD + " " + nounPPU;
+}
+
 
 function playerFont() {
   noStroke();
