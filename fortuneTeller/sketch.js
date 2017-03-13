@@ -6,8 +6,8 @@ count = 0
 
 var playerA = "I'm player 1! Click to see the other players"
 var playerB = "I'm player 2! Click to see the other players"
-var playerC = "I'm player 3! CLick to see other players"
-var playerD = "I'm player 4! Click to see other players"
+var playerC = "I'm player 3! Click to see other players"
+var playerD = "I'm player 4! Click the crystal ball once more and start getting your fortunes!"
 
 var page = 0;
 
@@ -51,13 +51,13 @@ var card4X = -600
 
 // Set up fortune text coordinates
 player1X = 450
-player1Y = 75
+player1Y = 300
 player2X = 750
-player2Y = 300
+player2Y = 600
 player3X = 450
-player3Y = 650
+player3Y = 900
 player4X = 150
-player4Y = 300
+player4Y = 600
 
 // Set up table backgroud
 var table;
@@ -96,7 +96,7 @@ function draw() {
   textSize(70); 
   textFont("Griffy");
   textAlign(CENTER);
-  text("Welcome to FortuneTellery!", titleX, 150); // Make the text scroll off the screen
+  text("Welcome to Fortune Tellery!", titleX, 150); // Make the text scroll off the screen
     titleX = titleX - 2;  
 
 // draw and control player card placement
@@ -123,35 +123,33 @@ function cards()  {
   text("Start", x, startY);
     startY = min(startY + 2, 460);
   
-  // for (i = 0; i < allCards.length; i++) {
-  //   allCards();
-  // }  
+
   } else if (page ==1) {
     allCards();
     playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-        text(playerA, player1X, player1Y);
+        text(playerA, player1X, player1Y, 275, 450);
     }
    
   } else if (page ==2) {
     allCards();
     playerFont(0);
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-        text(playerB, player2X, player2Y);
+        text(playerB, player2X, player2Y, 275, 450);
     }
     
   } else if (page ==3) {
     allCards();
     playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-        text(playerC, player3X, player3Y);
+        text(playerC, player3X, player3Y, 275, 450);
     }
 
   } else if (page ==4) {
     allCards();
     playerFont();
       if (mouseX > 375 && mouseX <525 && mouseY > 375 && mouseY < 525) {
-          text(playerD, player4X, player4Y);
+          text(playerD, player4X, player4Y, 275, 450);
     }  
   }
 }
@@ -163,8 +161,11 @@ function mousePressed() {
     playerB = cardRandomText();
     playerC = cardRandomText();
     playerD = cardRandomText();
-    
-  }
+  
+  // } else if (count > 9) {
+  //   playerFont();
+  //   text("play again", 450, 450);
+ }
 }
 
 function cardRandomText () {
@@ -182,9 +183,9 @@ function cardRandomText () {
 
 function playerFont() {
   noStroke();
-  fill(0, 255, 0);
+  fill(255);
   textSize(25); 
-  textFont("Ranga");
+  textFont("Playfair Display SC");
   textAlign(CENTER);
 }
 
@@ -198,61 +199,3 @@ function allCards() {
   rect(450, card3Y, 350, 300, 25, 25, 25, 25); // Bring in bottom card
   rect(card4X, 450, 300, 350, 25, 25, 25, 25); // Bring in left card
 }
-
-  // rect(450, 150, 350, 300, 25, 25, 25, 25);
-  // rect(750, 450, 300, 350, 25, 25, 25, 25);
-  // rect(150, 450, 300, 350, 25, 25, 25, 25);
-  // rect(450, 750, 350, 300, 25, 25, 25, 25);
-// function mousePressed() {
-//   ellipse(450, 450, 80, 80);
-//     if (mouseX > 410 && mouseX <490 && mouseY > 410 && mouseY < 490) {
-//     text("I'm player 1!", 450, 75);
-//     }
-//   }
-
-
-  
-
-//   if(page == 0) {
-//     image(table, 0, 0, 900, 900); // table image
-//     fill(255, 255, 255);
-//     noStroke();
-//     ellipse(450, 450, 150, 150); //crystal ball
-  
-//     noStroke();
-//     fill(93, 0, 255);
-//     textAlign(CENTER);
-//     textSize(40);
-//     text("Start", x, x + 15);
-    
-//     textSize(60);
-//     fill(255);
-//     textAlign(CENTER);
-//   // loadFont(<link href="https://fonts.googleapis.com/css?family=Griffy" rel="stylesheet">);
-//     text("Welcome to FortuneTellery!", 450, 150);
-  
-//   } else if (page == 1) {
-//     background(200,120,56);
-//     fill(255);
-//     rect(x + 100, 20, 50, 10);
-//   }
-
-// function mousePressed(x,y) {
-//     if(page == 0 && mouseX > 375 && mouseX < 525 && mouseY > 375 && mouseY < 525);
-//     page = page + 1;
-//   }
-
-
-  
-
-  
-
-  
-  // text(nounPPT, x, 460);
-  // //text(adjD, x + 50, 300)
-  
-  // fill(255, 255, 255);
-  // textSize(50);
-  // text("A" + " " + nounPPT + " " + verbs[0] + " " + adjD, 300, 200);
-//{
-  
